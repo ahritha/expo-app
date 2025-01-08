@@ -9,7 +9,7 @@ import EmojiList from '../components/EmojiList';
 import EmojiPicker from '../components/EmojiPicker';
 import { ImageSource } from 'expo-image';
 import EmojiSticker from '../components/EmojiSticker';
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { GestureHandlerRootView, ScrollView } from "react-native-gesture-handler";
 import * as MediaLibrary from 'expo-media-library';
 import { captureRef } from 'react-native-view-shot';
 
@@ -77,7 +77,7 @@ export default function Index() {
   return (
 
     <GestureHandlerRootView style={styles.container}>
-      <View style={styles.imageContainer}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.imageContainer}>
       <View style={styles.imageWrapper} ref={imageRef} collapsable={false}>
           <ImageViewer imgSource={PlaceholderImage} selectedImage={image} />
           {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
@@ -89,7 +89,7 @@ export default function Index() {
               <CircleButton onPress={onAddSticker} />
               <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
             </View>
-          </View> : <View>
+          </View> : <View style={{paddingVertical : 20}}>
             <Button label="Choose a photo" onPress={pickImageAsync} theme="primary" />
             <Button label="Use this photo" onPress={onUseImage} />
           </View>
@@ -97,7 +97,7 @@ export default function Index() {
         <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
           <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
         </EmojiPicker>
-      </View>
+      </ScrollView>
     </GestureHandlerRootView>
 
   );
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#25292e',
     alignItems: 'center',
+    
   },
   imageContainer: {
     flex: 1,

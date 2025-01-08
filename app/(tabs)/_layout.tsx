@@ -1,11 +1,11 @@
+import React from 'react';
 import { Tabs } from 'expo-router';
-
-import Ionicons from '@expo/vector-icons/Ionicons';
-
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TabLayout() {
     return (
         <Tabs
+            initialRouteName='bottomsheet'
             screenOptions={{
                 tabBarActiveTintColor: '#ffd33d',
                 headerStyle: {
@@ -18,12 +18,13 @@ export default function TabLayout() {
                 },
             }}
         >
+            
             <Tabs.Screen
-                name="index"
+                name="bottomsheet"
                 options={{
-                    title: 'Home',
+                    title: 'Bottom Sheet',
                     tabBarIcon: ({ color, focused }) => (
-                        <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
+                        <Ionicons name={'map'} color={color} size={24} />
                     ),
                 }}
             />
@@ -32,7 +33,16 @@ export default function TabLayout() {
                 options={{
                     title: 'About',
                     tabBarIcon: ({ color, focused }) => (
-                        <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24} />
+                        <Ionicons name={'information-circle-outline'} color={color} size={24} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Home',
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
                     ),
                 }}
             />
