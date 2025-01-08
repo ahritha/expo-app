@@ -12,6 +12,7 @@ export default function AboutScreen() {
     const handleGetMessage = (event: any) => {
         const mapData = JSON.parse(event.nativeEvent.data);
         setWebMap(mapData.info);
+        router.push('/bottomsheet');
     };
 
     const sendMessageToWeb = () => {
@@ -27,12 +28,11 @@ export default function AboutScreen() {
         <View style={styles.container}>
             <WebView
                 ref={webviewRef}
-                source={{ uri: 'http://192.168.12.24:5173' }}
+                source={{ uri: 'http://192.168.1.7:5173' }}
                 style={styles.webview}
                 onMessage={handleGetMessage}
             />
-            <Button title="Send Data to Web" onPress={sendMessageToWeb} />
-{/*             <Text>{JSON.stringify(webmap, null, 2)}</Text> */}
+            {/* <Text>{JSON.stringify(webmap, null, 2)}</Text> */}
         </View>
     );
 }

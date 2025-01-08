@@ -5,10 +5,24 @@ export const mapData = [
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
         title: "Royal Palace",
-        description: "The Royal Palace is a complex of buildings which serves as the royal residence of the king of Cambodia.",
-        images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL1jeS33DItqTihxZ0gySNKVx4ID9rliRchw&s','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRobXjvHRagd2al0IVbHvO9RKMw-k_j22-lDQ&s'],
+        description: "The Royal Palace is the official residence of the King of Cambodia and a must-visit landmark in Phnom Penh.",
+        images: [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL1jeS33DItqTihxZ0gySNKVx4ID9rliRchw&s',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRobXjvHRagd2al0IVbHvO9RKMw-k_j22-lDQ&s',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPy1oSckWNKt9CkhEE4TUoRKN7r9WCnqocg&s',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBgaW55O1uFBLzerD2YuJoWHUvS23b6K4qeGTjBd_VDaO3pBgLR_otOuODIMh2NHz3RlY&usqp=CAU',
+        ],
         openHours: "8:00 AM",
-        closeHours: "5:00 PM"
+        closeHours: "5:00 PM",
+        rating: 4.7,
+        reviewsCount: 1284,
+        tags: ["Historical", "Landmark", "Family-friendly", "Cultural"],
+        address: "Samdach Sothearos Blvd (3), Phnom Penh, Cambodia",
+        contact: "+855 23 221 800",
+        drivingInfo: {
+            distance: "3.2 km",
+            time: "12 mins",
+        },
     },
     {
         latitude: 13.4125,
